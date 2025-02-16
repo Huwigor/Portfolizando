@@ -1,5 +1,6 @@
 
 @import url(https://fonts.bunny.net/css?family=aladin:400);
+@import url(https://fonts.bunny.net/css?family=acme:400|aladin:400);
 
 @media(min-width:300px) and (max-width:500px){
 
@@ -8,7 +9,7 @@
     #nav-main{
         position: relative;
         padding: 10px;
-        background-color: #2a2a34;
+        background-color: #ebe3ed ;
     }
     
 
@@ -19,7 +20,7 @@
     .menu-btn {
         width: 40px;
         background-color: transparent;
-        color: white;
+        color: black;
         border: none;
         height: 40px;
         left: 5%;
@@ -31,43 +32,109 @@
       }
 
       .main-menu{
+        opacity: 0;
         visibility: hidden;
         width:0;
-        height: 100vh;
+        min-height: 100vh;
         overflow: hidden;
         z-index: 20;
         position: absolute;
-        transition: width 0.5s ease-in-out;
+        transition: opacity 0.3s ease-in-out, width 0.5s ease-in-out, visibility 0.3s ease-in-out;
         top: 0;
         left: 0;
-        background-color: #2a2a34;
+        background-color: #ebe3ed ;
       }
   
       .main-menu-active{
+        opacity: 1;
         visibility: visible;
         width: 100%;
       }
-  
-      .box-logo{
-        transition: opacity 0.5s ease;
+      .img-menu{
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 35;
+        height: 38vh;
       }
-    
+      .overflow-img{
+        object-fit: cover;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: opacity 0.5s ease-in-out;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 40;
+        height: 38vh;
+      }
+      #btn-fechar-categorias{
+        z-index: 50;
+        border: none;
+        background-color: #ebe3ed ;
+        padding: 5px;
+        border-radius: 50px;
+        color: black;
+        position: relative;
+        left: 80%;
+        top: 10%;
+      }
+
+      .icone-menu{
+        height: 70px;
+        z-index: 50;
+        position: relative;
+        transition: height 0.5s ease-in-out;
+        top: 10vh;
+        left: 8%;
+      }
+      .box-user{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+      .box-user-active{
+        max-height: 40vh;
+      }
+      .svg-user{
+        height: 20px;
+        margin-left: 5px;
+        margin-bottom: 7px;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        margin-right: 10px;
+      }
+      .svg-user-active{
+        transform: rotate(90deg);
+      }
       .menu{
         position: relative;
-        margin-top: 100px;
+        margin-top: 150px;
         width: 100%;
+        overflow-x: auto;
         z-index: 20;
       }
 
-
+     .svg-menu{
+        height: 20px;
+        margin-left: 5px;
+        margin-bottom: 7px;
+        transition: opacity 0.5s ease-in-out;
+        margin-right: 10px;
+     }
       .box-categoria{
         width: 100%;
-        transition: opacity 0.5s ease-in-out;
-        transition: width 0.5s ease-in-out;
+        overflow: hidden;
+        transition: opacity 0.5s ease-in-out, width 0.5s ease-in-out;
       }
       
       .btn-categoria{
         position: relative;
+        font-family: 'Acme', sans-serif;
+        margin-top: 20px;
+        font-size: 16px;
         border: none;
         width: 0;
         display: inline-block;
@@ -75,13 +142,29 @@
         text-align: left;
         box-shadow: 0px 2px 5px rgba(105, 105, 118, 0.5);
         transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-        background-color: #2a2a34;
+        background-color:transparent;
         white-space: nowrap;
-        color: aliceblue;
+        color: black;
         padding: 10px;  
       }
+      .btn-menu{
+        background-color: transparent;
+        border: none;
+        color: black;
+        transition: opacity 0.5s ease-in-out;
+        display: inline-block;
+      }
+      .btn-sub-menu{
+        background-color: transparent;
+        border: none;
+        color: black;
+        transition: opacity 0.5s ease-in-out;
+        display: inline-block;
+        margin: 10px;
+        color: #78707a ;
+      }
 
-      .main-menu-active .btn-categoria {
+    .main-menu-active .btn-categoria {
         width: 100%; 
         opacity: 1; 
     }
@@ -96,9 +179,10 @@
   
       .navbar-brand{
         font-family: 'Aladin', handwriting;
-        color: lightgray !important;
+        color:#78707a !important;
         margin-top: 10px;
-        margin-left: 10%;
+        margin-left: 30%;
+        width: 30px;
       }
   
       /* CARRINHO */
@@ -106,7 +190,7 @@
       .btn-carrinho{
         background-color: transparent;
         border: none;
-        color: aliceblue;
+        color:#78707a;
         width: 30px;
         height: 30px;
         margin-right: 30px;
@@ -115,9 +199,10 @@
       .btn-carrinho:focus{
         outline: none;
       }
-      .svg-carrinho{
+      .svg-add-port{
         height: 25px;
         width: 25px;
+        color: #78707a ;
       }
   
   }

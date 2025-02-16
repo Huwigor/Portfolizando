@@ -8,7 +8,7 @@
 .btn{
     position: absolute;
     top: 50%;
-    background-color: rgba(85, 85, 97, 0.8)!important;
+    background: linear-gradient(to left, #2d1035, #42174f)!important;
     border-radius: 50px!important;
     padding: 5px !important;
     opacity: 0;

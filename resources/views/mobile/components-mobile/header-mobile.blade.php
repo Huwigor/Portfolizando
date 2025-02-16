@@ -17,18 +17,26 @@
 
         <div class="menu">
             @auth
-                <div class="box-categoria" id="box-categoria">
-                    <button class="btn-categoria">Olá, {{auth()->user()->name}}</button>
-                    <div>
-                        <button class="btn-categoria">Seus Portfolios</button>
-                        <button class="btn-categoria">Seus Dados</button>
-                        <button class="btn-categoria">Sair</button>
+                <div class="btn-categoria" id="box-categoria">
+
+                    <button class="btn-menu" id="btn-user"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-menu">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg> Olá, {{auth()->user()->name}} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-user">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg> </button>
+
+                    <div class="box-user" id="box-user">
+                        <button class="btn-sub-menu">Seus Portfolios</button>
+                        <br>
+                        <button class="btn-sub-menu">Seus Dados</button>
+                        <br>
+                        <button class="btn-sub-menu" onclick="window.location.href='{{route('logout-user')}}'">Sair</button>
                     </div>
                 </div>
             @endauth
             @guest
                 <div class="btn-categoria">
-                    <button class="btn-menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-menu">
+                    <button class="btn-menu" onclick="window.location.href='/login-user'"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-menu">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg> Entre ou cadastre-se!</button>
                 </div>
@@ -39,7 +47,9 @@
                     </svg> Planos</button>
                 </div>
                 <div class="btn-categoria">
-                    <button class="btn-menu"><img src="{{asset('icons/add-port.png')}}" alt="" class="svg-menu"> Criar Portfólio</button>
+                    <button class="btn-menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-menu">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg> Criar Portfólio</button>
                 </div>
                 <div class="btn-categoria">
                     <button class="btn-menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-menu" >
@@ -53,7 +63,9 @@
               <h1 class="navbar-brand" onclick="window.location.href='/home-mobile'">Portfolizando <img src="{{asset('icons/logo.png')}}" alt="" height="25px"></h1>
         </div>
 
-        <button class="btn-carrinho ms-auto"><img src="{{asset('icons/add-port.png')}}" alt="" height="25px"></button>
+        <button class="btn-carrinho ms-auto"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 svg-add-port">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg></button>
 
 
     </nav>
